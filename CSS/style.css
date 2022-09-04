@@ -1,0 +1,10 @@
+ 
+@media all and (max-width: 767px){
+    .footerCenter{
+        text-align: center;
+}
+.cardSize{
+    margin: 5px;
+    width: 300px;
+    }
+}
