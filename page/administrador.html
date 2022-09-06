@@ -88,8 +88,7 @@
             <button
               type="submit"
               class="btn fs-1"
-              data-bs-toggle="modal"
-              data-bs-target="#modalAgregarProducto"
+              id="btnAgregarProducto"
             >
               <i class="bi bi-file-earmark-diff-fill text-primary fs-1"></i>
             </button>
@@ -193,7 +192,7 @@
       <!-- Modal  para ingresar pelicula-->
       <div
         class="modal fade"
-        id="modalAgregarProducto"
+        id="modalForm"
         tabindex="-1"
         aria-labelledby="modalAgregarLabel"
         aria-hidden="true"
@@ -201,7 +200,7 @@
         <div class="modal-dialog">
           <div class="modal-content text-bg-dark p-3">
             <div class="modal-header">
-              <h5 class="modal-title" id="modalAgregarLabel">
+              <h5 class="modal-title" id="formProducto">
                 Ingrese el Producto
               </h5>
               <button
@@ -266,10 +265,10 @@
                   />
                 </div>
                 <div>
-                  <label for="genero">Tipo</label>
+                  <label for="tipo">Tipo</label>
                   <select
-                    name="genero"
-                    id="genero"
+                    name="tipo"
+                    id="tipo"
                     class="form-control required"
                     required
                   >
@@ -302,7 +301,8 @@
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"
     ></script>
-    <script src="" type=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
+    <script src="/JS/app.js" ></script>
   </body>
 </html>
 <!DOCTYPE html>
