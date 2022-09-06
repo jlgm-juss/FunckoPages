@@ -13,3 +13,12 @@
     text-align: center;
   }
 }
+
+.noLink{
+  text-decoration: solid;
+  color: green;
+}
+
+.noLink:hover{
+  color: white;
+}
