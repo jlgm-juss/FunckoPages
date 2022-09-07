@@ -33,31 +33,30 @@
     <header class="bg-light">
       <nav class="navbar navbar-expand-lg bg-light container">
         <div class="container-fluid">
-          <a class="navbar-brand" href="../index.html">"Logo"</a>
+          <a class="navbar-brand" href="#">"Logo"</a>
           <button
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+           
           >
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
+                <a class="nav-link" aria-current="page" href="#">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="administrador.html">Administrador</a>
+                <a class="nav-link active" href="#">Administrador</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../page/detalle.html">Detalles</a>
+                <a class="nav-link" href="#">Detalles</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./acercadeNosotros.html">Acerca de nosotros</a>
+                <a class="nav-link" href="#">Acerca de nosotros</a>
               </li>
             </ul>
             <form class="d-flex" role="search">
@@ -85,11 +84,7 @@
           <hr />
           <h3>
             Ingrese el producto:
-            <button
-              type="submit"
-              class="btn fs-1"
-              id="btnAgregarProducto"
-            >
+            <button type="button" class="btn fs-1" id="btnAgregarProducto">
               <i class="bi bi-file-earmark-diff-fill text-primary fs-1"></i>
             </button>
           </h3>
@@ -189,18 +184,19 @@
           </div>
         </article>
       </section>
-      <!-- Modal  para ingresar pelicula-->
+      <!-- Modal  para ingresar producto-->
       <div
         class="modal fade"
-        id="modalForm"
+        id="modalAgregarProducto"
         tabindex="-1"
         aria-labelledby="modalAgregarLabel"
         aria-hidden="true"
+        
       >
         <div class="modal-dialog">
           <div class="modal-content text-bg-dark p-3">
             <div class="modal-header">
-              <h5 class="modal-title" id="formProducto">
+              <h5 class="modal-title" id="modalAgregarLabel">
                 Ingrese el Producto
               </h5>
               <button
@@ -223,20 +219,20 @@
                     maxlength="350"
                     readonly
                     placeholder="Aqui iria el cod de generacion automatica"
+                    disabled
                   />
                 </div>
                 <div>
                   <label for="nombre">Nombre</label>
                   <input
-                    type="text"
-                    id="nombre"
-                    class="form-control"
-                    required
-                    minlength="1"
-                    maxlength="350"
-                    readonly
-                    placeholder="Ingrese el nombre del producto"
-                  />
+                      type="text"
+                      id="nombre"
+                      class="form-control"
+                      required
+                      minlength="1"
+                      maxlength="350"
+                      placeholder="Ingrese el Titulo a cargar"
+                    />
                 </div>
                 <div>
                   <label for="descripcion">Descripcion</label>
@@ -265,7 +261,7 @@
                   />
                 </div>
                 <div>
-                  <label for="tipo">Tipo</label>
+                  <label for="tipo">Seleccione el tipo de Funko-pop</label>
                   <select
                     name="tipo"
                     id="tipo"
@@ -273,9 +269,9 @@
                     required
                   >
                     <option value="">Seleccione el tipo de Funko-pop</option>
-                    <option value="accion">Thor</option>
-                    <option value="romantico">Iron-Man</option>
-                    <option value="sci-fi">Capitan America</option>
+                    <option value="Thor">Thor</option>
+                    <option value="Iron-Man">Iron-Man</option>
+                    <option value="Capitan America">Capitan America</option>
                   </select>
                 </div>
                 <div>
@@ -302,7 +298,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
-    <script src="/JS/app.js" ></script>
+    <script src="/JS/app.js" type="module"></script>
   </body>
 </html>
 <!DOCTYPE html>
