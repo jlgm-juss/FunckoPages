@@ -14,6 +14,10 @@
 .imagenFunko{
   width: 500px;
 }
+.textoFooter{
+  text-decoration: none;
+  color: black;
+}
 
 @media all and (max-width: 767px) {
   .footerCenter {
