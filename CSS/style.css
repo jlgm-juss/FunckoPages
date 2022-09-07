@@ -8,6 +8,13 @@
   height: 80px;
 }
 
+.ImagenPrincipal{
+  width: 300px;
+}
+.imagenFunko{
+  width: 500px;
+}
+
 @media all and (max-width: 767px) {
   .footerCenter {
     text-align: center;
