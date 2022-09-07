@@ -11,6 +11,8 @@ let nombre = document.getElementById("nombre");
 let descripcion = document.getElementById("descripcion");
 let imagen = document.getElementById("imagen");
 let tipo = document.getElementById("tipo");
+let precio = document.getElementById("precio");
+let stock = document. getElementById("stock");
 let formProducto = document.getElementById("formProducto");
 
 // Events
@@ -33,6 +35,8 @@ function crearProducto(e) {
     codigo.value,
     nombre.value,
     descripcion.value,
+    precio.value,
+    stock.value,
     imagen.value,
     tipo.value
   );
@@ -48,6 +52,8 @@ function limpiarForm() {
     formProducto.reset();
     nombre.className = "form-control";
     descripcion.className = "form-control";
+    precio.className = "form-control";
+    stock.className = "form-control";
     imagen.className = "form-control";
     tipo.className = "form-control";
   }
