@@ -104,7 +104,7 @@ ${productos.precio}
 <i class="bi bi-pencil-square text-warning fs-1" ></i>
 </button>
 <button class="btn">
-<i class="bi bi-clipboard-x-fill text-danger fs-1" ></i>
+<i class="bi bi-clipboard-x-fill text-danger fs-1" onclick="borrarProducto('${productos.codigo}')"></i>
 </button>
 </td>
 </tr>`;
@@ -115,3 +115,32 @@ function actualizarTabla() {
   tablaProducto.innerHTML = "";
   cargaInicial();
 }
+
+window.borrarProducto = function (codigo) {
+  Swal.fire({
+    title: "Eliminar Pelicula",
+    text: "Si eliminas la pelicula no podras volver a recuperar",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Si, Eliminar",
+    cancelButtonText: "Cancelar",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      console.log(codigo);
+      let copiaListaProductos = listaProductos.filter((producto) => {
+        return producto.codigo != codigo;
+      });
+      console.log(copiaListaProductos);
+      listaProductos = copiaListaProductos;
+      guardarLS();
+      actualizarTabla();
+      Swal.fire(
+        "Eliminada!",
+        "Has eliminado con exito esta pelicula",
+        "success"
+      );
+    }
+  });
+};
