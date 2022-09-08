@@ -3,8 +3,33 @@
   width: 300px;
 }
 
+.logoNavbar{
+  width: 90px;
+  height: 80px;
+}
+
+.ImagenPrincipal{
+  width: 300px;
+}
+.imagenFunko{
+  width: 500px;
+}
+.textoFooter{
+  text-decoration: none;
+  color: black;
+}
+
 @media all and (max-width: 767px) {
   .footerCenter {
     text-align: center;
   }
+}
+
+.noLink{
+  text-decoration: solid;
+  color: green;
+}
+
+.noLink:hover{
+  color: white;
 }
