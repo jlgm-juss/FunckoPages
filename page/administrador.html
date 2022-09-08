@@ -40,24 +40,22 @@
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
+                <a class="nav-link" aria-current="page" href="#">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="administrador.html">Administrador</a>
+                <a class="nav-link active" href="#">Administrador</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../page/detalle.html">Detalles</a>
+                <a class="nav-link" href="#">Detalles</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./acercadeNosotros.html">Acerca de nosotros</a>
+                <a class="nav-link" href="#">Acerca de nosotros</a>
               </li>
             </ul>
             <form class="d-flex" role="search">
@@ -85,12 +83,7 @@
           <hr />
           <h3>
             Ingrese el producto:
-            <button
-              type="submit"
-              class="btn fs-1"
-              data-bs-toggle="modal"
-              data-bs-target="#modalAgregarProducto"
-            >
+            <button type="button" class="btn fs-1" id="btnAgregarProducto">
               <i class="bi bi-file-earmark-diff-fill text-primary fs-1"></i>
             </button>
           </h3>
@@ -109,88 +102,18 @@
                   <th scope="col">Nombre</th>
                   <th scope="col">Descripcion</th>
                   <th scope="col">Recurso</th>
+                  <th scope="col">Precio</th>
+                  <th scope="col">Cantidad</th>
                   <th scope="col">Tipo</th>
+                  <th scope="col">Accion</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <th
-                    scope="row"
-                    class="text-truncate"
-                    style="max-width: 150px"
-                  >
-                    1
-                  </th>
-                  <td>Mark</td>
-                  <td class="text-truncate" style="max-width: 150px">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Impedit ullam quos, culpa eius accusantium voluptatibus
-                    facere nemo, illum at alias officiis! Aperiam qui hic,
-                    reiciendis quia iusto, earum nobis quisquam consequatur
-                    neque veritatis unde enim commodi nihil corrupti ea
-                    praesentium debitis sapiente, similique molestiae? Omnis
-                    iusto iste tenetur suscipit et?
-                  </td>
-                  <td class="text-truncate" style="max-width: 150px">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Explicabo nisi obcaecati officiis quasi deserunt repudiandae
-                    adipisci nemo sequi ut, laudantium harum hic culpa natus
-                    perferendis!
-                  </td>
-                  <td>edatrdf</td>
-                </tr>
-                <tr>
-                  <th
-                    scope="row"
-                    class="text-truncate"
-                    style="max-width: 150px"
-                  >
-                    2
-                  </th>
-                  <td>Jacob</td>
-                  <td class="text-truncate" style="max-width: 150px">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Harum alias, voluptate sed quasi assumenda aliquid
-                    voluptates cupiditate cumque ipsum voluptatem modi! Atque
-                    nulla labore repellat!
-                  </td>
-                  <td class="text-truncate" style="max-width: 150px">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Harum alias, voluptate sed quasi assumenda aliquid
-                    voluptates cupiditate cumque ipsum voluptatem modi! Atque
-                    nulla labore repellat!
-                  </td>
-                  <td>shvnhd</td>
-                </tr>
-                <tr>
-                  <th
-                    scope="row"
-                    class="text-truncate"
-                    style="max-width: 150px"
-                  >
-                    3
-                  </th>
-                  <td>Larry</td>
-                  <td class="text-truncate" style="max-width: 150px">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Harum alias, voluptate sed quasi assumenda aliquid
-                    voluptates cupiditate cumque ipsum voluptatem modi! Atque
-                    nulla labore repellat!
-                  </td>
-                  <td class="text-truncate" style="max-width: 150px">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Harum alias, voluptate sed quasi assumenda aliquid
-                    voluptates cupiditate cumque ipsum voluptatem modi! Atque
-                    nulla labore repellat!
-                  </td>
-                  <td>dsfhgdgh</td>
-                </tr>
-              </tbody>
+              <tbody id="tablaProducto"></tbody>
             </table>
           </div>
         </article>
       </section>
-      <!-- Modal  para ingresar pelicula-->
+      <!-- Modal  para ingresar producto-->
       <div
         class="modal fade"
         id="modalAgregarProducto"
@@ -224,6 +147,7 @@
                     maxlength="350"
                     readonly
                     placeholder="Aqui iria el cod de generacion automatica"
+                    disabled
                   />
                 </div>
                 <div>
@@ -235,8 +159,7 @@
                     required
                     minlength="1"
                     maxlength="350"
-                    readonly
-                    placeholder="Ingrese el nombre del producto"
+                    placeholder="Ingrese el Titulo a cargar"
                   />
                 </div>
                 <div>
@@ -253,6 +176,31 @@
                     placeholder="Descripcion del producto..."
                   ></textarea>
                 </div>
+
+                <div>
+                  <label for="precio">Precio</label>
+                  <input
+                    type="text"
+                    id="precio"
+                    class="form-control"
+                    required
+                    minlength="1"
+                    maxlength="350"
+                    placeholder="Ingrese el precio del producto..."
+                  />
+                </div>
+                <div>
+                  <label for="stock">Stock</label>
+                  <input
+                    type="text"
+                    id="stock"
+                    class="form-control"
+                    required
+                    minlength="1"
+                    maxlength="350"
+                    placeholder="Ingrese la cantidad de productos a cargar..."
+                  />
+                </div>
                 <div>
                   <label for="imagen">Imagen</label>
                   <input
@@ -266,17 +214,17 @@
                   />
                 </div>
                 <div>
-                  <label for="genero">Tipo</label>
+                  <label for="tipo">Seleccione el tipo de Funko-pop</label>
                   <select
-                    name="genero"
-                    id="genero"
+                    name="tipo"
+                    id="tipo"
                     class="form-control required"
                     required
                   >
                     <option value="">Seleccione el tipo de Funko-pop</option>
-                    <option value="accion">Thor</option>
-                    <option value="romantico">Iron-Man</option>
-                    <option value="sci-fi">Capitan America</option>
+                    <option value="Thor">Thor</option>
+                    <option value="Iron-Man">Iron-Man</option>
+                    <option value="Capitan America">Capitan America</option>
                   </select>
                 </div>
                 <div>
@@ -303,7 +251,9 @@
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"
     ></script>
-    <script src="" type=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
+    <script src="/JS/app.js" type="module"></script>
   </body>
 </html>
 <!DOCTYPE html>
