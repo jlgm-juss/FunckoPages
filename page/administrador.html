@@ -40,7 +40,6 @@
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
-           
           >
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -106,88 +105,10 @@
                   <th scope="col">Precio</th>
                   <th scope="col">Cantidad</th>
                   <th scope="col">Tipo</th>
+                  <th scope="col">Accion</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <th
-                    scope="row"
-                    class="text-truncate"
-                    style="max-width: 150px"
-                  >
-                    1
-                  </th>
-                  <td>Mark</td>
-                  <td class="text-truncate" style="max-width: 150px">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Impedit ullam quos, culpa eius accusantium voluptatibus
-                    facere nemo, illum at alias officiis! Aperiam qui hic,
-                    reiciendis quia iusto, earum nobis quisquam consequatur
-                    neque veritatis unde enim commodi nihil corrupti ea
-                    praesentium debitis sapiente, similique molestiae? Omnis
-                    iusto iste tenetur suscipit et?
-                  </td>
-                  <td class="text-truncate" style="max-width: 150px">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Explicabo nisi obcaecati officiis quasi deserunt repudiandae
-                    adipisci nemo sequi ut, laudantium harum hic culpa natus
-                    perferendis!
-                  </td>
-                  <td>edatrdf</td>
-                  <td>edatrdf</td>
-                  <td>edatrdf</td>
-                </tr>
-                <tr>
-                  <th
-                    scope="row"
-                    class="text-truncate"
-                    style="max-width: 150px"
-                  >
-                    2
-                  </th>
-                  <td>Jacob</td>
-                  <td class="text-truncate" style="max-width: 150px">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Harum alias, voluptate sed quasi assumenda aliquid
-                    voluptates cupiditate cumque ipsum voluptatem modi! Atque
-                    nulla labore repellat!
-                  </td>
-                  <td class="text-truncate" style="max-width: 150px">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Harum alias, voluptate sed quasi assumenda aliquid
-                    voluptates cupiditate cumque ipsum voluptatem modi! Atque
-                    nulla labore repellat!
-                  </td>
-                  <td>shvnhd</td>
-                  <td>shvnhd</td>
-                  <td>shvnhd</td>
-                </tr>
-                <tr>
-                  <th
-                    scope="row"
-                    class="text-truncate"
-                    style="max-width: 150px"
-                  >
-                    3
-                  </th>
-                  <td>Larry</td>
-                  <td class="text-truncate" style="max-width: 150px">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Harum alias, voluptate sed quasi assumenda aliquid
-                    voluptates cupiditate cumque ipsum voluptatem modi! Atque
-                    nulla labore repellat!
-                  </td>
-                  <td class="text-truncate" style="max-width: 150px">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Harum alias, voluptate sed quasi assumenda aliquid
-                    voluptates cupiditate cumque ipsum voluptatem modi! Atque
-                    nulla labore repellat!
-                  </td>
-                  <td>dsfhgdgh</td>
-                  <td>dsfhgdgh</td>
-                  <td>dsfhgdgh</td>
-                </tr>
-              </tbody>
+              <tbody id="tablaProducto"></tbody>
             </table>
           </div>
         </article>
@@ -199,7 +120,6 @@
         tabindex="-1"
         aria-labelledby="modalAgregarLabel"
         aria-hidden="true"
-        
       >
         <div class="modal-dialog">
           <div class="modal-content text-bg-dark p-3">
@@ -233,14 +153,14 @@
                 <div>
                   <label for="nombre">Nombre</label>
                   <input
-                      type="text"
-                      id="nombre"
-                      class="form-control"
-                      required
-                      minlength="1"
-                      maxlength="350"
-                      placeholder="Ingrese el Titulo a cargar"
-                    />
+                    type="text"
+                    id="nombre"
+                    class="form-control"
+                    required
+                    minlength="1"
+                    maxlength="350"
+                    placeholder="Ingrese el Titulo a cargar"
+                  />
                 </div>
                 <div>
                   <label for="descripcion">Descripcion</label>
@@ -256,7 +176,7 @@
                     placeholder="Descripcion del producto..."
                   ></textarea>
                 </div>
-              
+
                 <div>
                   <label for="precio">Precio</label>
                   <input
@@ -330,6 +250,7 @@
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
     <script src="/JS/app.js" type="module"></script>
   </body>
