@@ -15,3 +15,7 @@ function crearCards(funko){
     </div>
   </div>`
 }
+
+function detalleFunko(codigo){
+    window.location.href = window.location.origin = "/page/detalle.html?codigo="+codigo;
+}
