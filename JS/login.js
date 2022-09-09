@@ -1,27 +1,27 @@
-function obtenerListaUsuarios(){
-    let listaUsuarios = JSON.parse(localStorage.getItem('listaUsuariosLs'));
+// function obtenerListaUsuarios(){
+//     let listaUsuarios = JSON.parse(localStorage.getItem('listaUsuariosLs'));
 
-    if(listaUsuarios = null){
-        listaUsuarios=
-        [
-        //Usuario, contraseña
-        ['adminsfunko', 'funk77']
-        ]
-    }
-    return listaUsuarios;
-}
-function validarCredenciales(pUsuario, pContrasena){
-    let listaUsuarios = obtenerListaUsuarios();
-    let bAcceso = false;
+//     if(listaUsuarios = null){
+//         listaUsuarios=
+//         [
+//         //Usuario, contraseña
+//         ['adminsfunko', 'funk77']
+//         ]
+//     }
+//     return listaUsuarios;
+// }
+// function validarCredenciales(pUsuario, pContrasena){
+//     let listaUsuarios = obtenerListaUsuarios();
+//     let bAcceso = false;
 
-    for(let i=0; i < listaUsuarios.length; i++){
-        if(pUsuario == listaUsuarios[i][0] && pContrasena == listaUsuarios[i][1]){
-            bAcceso = true;
-            sessionStorage.setItem('usuarioActivo', listaUsuarios[i][0] + '')
-        }
-    }
-    return bAcceso;
-}
+//     for(let i=0; i < listaUsuarios.length; i++){
+//         if(pUsuario == listaUsuarios[i][0] && pContrasena == listaUsuarios[i][1]){
+//             bAcceso = true;
+//             sessionStorage.setItem('usuarioActivo', listaUsuarios[i][0] + '')
+//         }
+//     }
+//     return bAcceso;
+// }
    
    
    
