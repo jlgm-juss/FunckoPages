@@ -1,52 +1,31 @@
-// function obtenerListaUsuarios(){
-//     let listaUsuarios = JSON.parse(localStorage.getItem('listaUsuariosLs'));
+class Usuario {
+    constructor(usuario, pass){
+        this.usuario = usuario,
+        this.pass = pass
+    }
+}
 
-//     if(listaUsuarios = null){
-//         listaUsuarios=
-//         [
-//         //Usuario, contraseña
-//         ['adminsfunko', 'funk77']
-//         ]
-//     }
-//     return listaUsuarios;
-// }
-// function validarCredenciales(pUsuario, pContrasena){
-//     let listaUsuarios = obtenerListaUsuarios();
-//     let bAcceso = false;
+let usuario = document.getElementById('usuario')
+let pass = document.getElementById('pass')
+let ingresar = document.getElementById('ingresar')
+let formLogin = document.getElementById('formLog')
 
-//     for(let i=0; i < listaUsuarios.length; i++){
-//         if(pUsuario == listaUsuarios[i][0] && pContrasena == listaUsuarios[i][1]){
-//             bAcceso = true;
-//             sessionStorage.setItem('usuarioActivo', listaUsuarios[i][0] + '')
-//         }
-//     }
-//     return bAcceso;
-// }
-   
-   
-   
-   
-   
-   
-   
-   //PARA CREAR USUARIOS SIN PERMISOS ESPECIALES
-   // const usuario = document.getElementById('usuario')
-    // const pass = document.getElementById('pass')
-    // const button = document.getElementById('button')
+function DirigirAdmin(){
+    if(usuario == 'AdminFunko' && pass == 'Funko989'){
+        window.location.href = './page/adminstrador.html'
+    }
+}
 
-    // if(usuario == 'adminFunko' && pass == '743Af'){
-    //     window.location.href = '../page/administrador.html'
-    // }
+formLogin.addEventListener("submit", crearAdmin);
 
-    // button.addEventListener('click', (e) => {
-    //     e.preventDefault()
-    //     const data = {
-    //         usuario: usuario.value,
-    //         pass: pass.value
-            
-        
-    //     }
-       
-    //     console.log(data)
-    // })
-    
+function crearAdmin(e) {
+    e.preventDefault();
+    location = 'administrador.html';
+    const nuevoUsuario = new Usuario(
+      usuario.value,
+      pass.value,
+    );
+  }
+  
+
+
