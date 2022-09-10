@@ -1,4 +1,5 @@
 import Producto from "./classProducto.js";
+import { validarDescripcion, validarGenero, validarImagen, validarNombre, validarPrecio, validarStock } from "./helpers.js";
 
 // Inicializacion de variables
 let listaProductos =
@@ -21,6 +22,12 @@ btnAgregarProducto.addEventListener("click", () => {
   mostrarForm(codigo);
 });
 formProducto.addEventListener("submit", crearProducto);
+nombre.addEventListener('blur', ()=>{validarNombre(nombre)});
+descripcion.addEventListener('blur', ()=>{validarDescripcion(descripcion)});
+imagen.addEventListener('blur', ()=>{validarImagen(imagen)});
+tipo.addEventListener('blur', ()=>{validarGenero(tipo)});
+precio.addEventListener('blur',()=>{validarPrecio(precio)});
+stock.addEventListener('blur', ()=>{validarStock(stock)});
 
 // Funciones
 
