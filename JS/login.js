@@ -1,3 +1,5 @@
+import {validarNombre, validarContraseña  } from "./helpers.js";
+
 class Usuario {
     constructor(usuario, pass){
         this.usuario = usuario,
@@ -27,5 +29,5 @@ function crearAdmin(e) {
     );
   }
   
-
-
+  usuario.addEventListener('blur',()=>{validarNombre(precio)});
+  pass.addEventListener('blur', ()=>{validarContraseña(stock)});
