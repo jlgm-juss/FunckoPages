@@ -1,36 +1,28 @@
+import { validarNombre, validarContraseña } from "./helpers.js";
 
-import {validarNombre, validarContraseña  } from "./helpers.js";
-
-class Usuario {
-    constructor(usuario, pass){
-        this.usuario = usuario,
-        this.pass = pass
-    }
-}
-
-let usuario = document.getElementById('usuario')
-let pass = document.getElementById('pass')
-let ingresar = document.getElementById('ingresar')
-let formLogin = document.getElementById('formLog')
-
-function DirigirAdmin(){
-    if(usuario == 'AdminFunko' && pass == 'Funko989'){
-        window.location.href = './page/adminstrador.html'
-    }
-}
+let usuario = document.getElementById("usuario");
+let pass = document.getElementById("pass");
+let ingresar = document.getElementById("ingresar");
+let formLogin = document.getElementById("formLog");
 
 formLogin.addEventListener("submit", crearAdmin);
 
 function crearAdmin(e) {
-    e.preventDefault();
-    location = 'administrador.html';
-    const nuevoUsuario = new Usuario(
-      usuario.value,
-      pass.value,
-    );
+  e.preventDefault();
+  if(validarNombre(usuario) && validarContraseña(pass)){
+    ir();
   }
-  
-  usuario.addEventListener('blur',()=>{validarNombre(precio)});
-  pass.addEventListener('blur', ()=>{validarContraseña(stock)});
+}
 
-  DirigirAdmin();
+usuario.addEventListener("blur", () => {
+  validarNombre(usuario);
+});
+pass.addEventListener("blur", () => {
+  validarContraseña(pass);
+});
+
+function ir() {
+    if(usuario.value === 'Adminfunko' && pass.value === 'Funko898'){
+        window.location.href = window.location.origin + "/page/administrador.html";
+    }else{ window.location.href = window.location.origin + "/index.html";}
+}
