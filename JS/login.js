@@ -1,3 +1,4 @@
+
 import {validarNombre, validarContraseña  } from "./helpers.js";
 
 class Usuario {
@@ -31,3 +32,5 @@ function crearAdmin(e) {
   
   usuario.addEventListener('blur',()=>{validarNombre(precio)});
   pass.addEventListener('blur', ()=>{validarContraseña(stock)});
+
+  DirigirAdmin();

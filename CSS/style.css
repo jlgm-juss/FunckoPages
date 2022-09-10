@@ -19,12 +19,6 @@
   color: black;
 }
 
-@media all and (max-width: 767px) {
-  .footerCenter {
-    text-align: center;
-  }
-}
-
 .noLink{
   text-decoration: solid;
   color: green;
@@ -32,4 +26,10 @@
 
 .noLink:hover{
   color: white;
+}
+
+@media all and (max-width: 767px) {
+  .footerCenter {
+    text-align: center;
+  }
 }
