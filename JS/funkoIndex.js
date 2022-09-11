@@ -21,5 +21,5 @@ function crearCards(funko){
 }
 
 function detalleFunko(codigo){
-    window.location.href = window.location.origin = "/page/detalle.html?codigo="+codigo;
+    window.location.href = window.location.origin = "./page/detalle.html?codigo="+codigo;
 }

@@ -1,52 +1,28 @@
-// function obtenerListaUsuarios(){
-//     let listaUsuarios = JSON.parse(localStorage.getItem('listaUsuariosLs'));
+import { validarNombre, validarContraseña } from "./helpers.js";
 
-//     if(listaUsuarios = null){
-//         listaUsuarios=
-//         [
-//         //Usuario, contraseña
-//         ['adminsfunko', 'funk77']
-//         ]
-//     }
-//     return listaUsuarios;
-// }
-// function validarCredenciales(pUsuario, pContrasena){
-//     let listaUsuarios = obtenerListaUsuarios();
-//     let bAcceso = false;
+let usuario = document.getElementById("usuario");
+let pass = document.getElementById("pass");
+let ingresar = document.getElementById("ingresar");
+let formLogin = document.getElementById("formLog");
 
-//     for(let i=0; i < listaUsuarios.length; i++){
-//         if(pUsuario == listaUsuarios[i][0] && pContrasena == listaUsuarios[i][1]){
-//             bAcceso = true;
-//             sessionStorage.setItem('usuarioActivo', listaUsuarios[i][0] + '')
-//         }
-//     }
-//     return bAcceso;
-// }
-   
-   
-   
-   
-   
-   
-   
-   //PARA CREAR USUARIOS SIN PERMISOS ESPECIALES
-   // const usuario = document.getElementById('usuario')
-    // const pass = document.getElementById('pass')
-    // const button = document.getElementById('button')
+formLogin.addEventListener("submit", crearAdmin);
 
-    // if(usuario == 'adminFunko' && pass == '743Af'){
-    //     window.location.href = '../page/administrador.html'
-    // }
+function crearAdmin(e) {
+  e.preventDefault();
+  if(validarNombre(usuario) && validarContraseña(pass)){
+    ir();
+  }
+}
 
-    // button.addEventListener('click', (e) => {
-    //     e.preventDefault()
-    //     const data = {
-    //         usuario: usuario.value,
-    //         pass: pass.value
-            
-        
-    //     }
-       
-    //     console.log(data)
-    // })
-    
+usuario.addEventListener("blur", () => {
+  validarNombre(usuario);
+});
+pass.addEventListener("blur", () => {
+  validarContraseña(pass);
+});
+
+function ir() {
+    if(usuario.value === 'Adminfunko' && pass.value === 'Funko898'){
+        window.location.href = window.location.origin + "/page/administrador.html";
+    }else{ window.location.href = window.location.origin + "/index.html";}
+}
