@@ -22,6 +22,7 @@ detalle.innerHTML = `
   <p>Codigo: ${funkoPop.codigo}</p>
   <p>Stock: ${funkoPop.stock}</p>
   <a href="./error404.html" class="btn btn-outline-primary my-5"><i class="bi bi-cart2"> Comprar</i></a>
+  <a href="../index.html" class="btn btn-outline-primary my-5"><i class="bi bi-cart2"> Explorar mas</i></a>
 </div>
 </div>
 </article>`
