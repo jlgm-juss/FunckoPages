@@ -5,7 +5,7 @@ listaProductos.map((funko)=>{crearCards(funko)});
 function crearCards(funko){
     let cards = document.querySelector("#grillaFunko");
     cards.innerHTML += `
-    <div class="card col-12 col-md-5 col-lg-2 cardSize">
+    <div class="card col-12 col-md-5 col-lg-2 cardSize shadow-lg m-3">
       <div>
         <img src="${funko.imagen}" class="w-100 card-img-top" alt="${funko.nombre}">
       </div>

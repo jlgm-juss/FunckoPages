@@ -1,3 +1,26 @@
+.body {
+  background-image: url(https://www.wallpaperuse.com/wallp/30-302906_m.jpg);
+background-size: cover;
+}
+.body2 {
+  background-image: url(https://i.pinimg.com/564x/5f/50/96/5f5096f0e48be208442ca86ba69e2162.jpg);
+background-size: cover;
+}
+.fondoNav {
+  background-color: #55bae2;
+}
+.letraTitulo {
+  font-size: 90px;
+  -webkit-text-stroke: 2px black;
+}
+body{
+  font-size: larger;
+  font-family: "Teko", sans-serif;
+}
+.colorCard{
+  background-color: transparent;
+  border-color: transparent;
+}
 .cardSize {
   margin: 5px;
   width: 300px;
@@ -16,13 +39,9 @@
 }
 .textoFooter{
   text-decoration: none;
-  color: black;
+  color: rgb(188, 186, 186);
 }
 
-.noLink{
-  text-decoration: solid;
-  color: green;
-}
 
 .noLink:hover{
   color: white;

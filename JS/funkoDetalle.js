@@ -7,7 +7,7 @@ let funkoPop = listaProductos.find((funko) =>{return funko.codigo === codigo.get
 
 let detalle = document.querySelector("#detalleFunko")
 detalle.innerHTML = `
-<article class="row my-5 border rounded">
+<article class="row my-5 border rounded bg-light">
 <div class="col-12 col-md-8 col-lg-4">
   <img src="${funkoPop.imagen}" class="img-fluid rounded" alt="${funkoPop.nombre}" />
 </div>
