@@ -1,28 +1,32 @@
 //parametro de busqueda segun find
-const productos1 = [{
-    nombre: 'jason vorgees',
-    valor: 10000
-  },
-  {
-    nombre: 'mark',
-    valor: 13000
-  },
-  {
-    nombre: 'batman',
-    valor: 12000
-  },
-  {
-    nombre: 'superman',
-    valor: 15000
-  },
-]
-const productos = JSON.parse(localStorage.getItem("productoGuardadoLS"));
-console.log("productos:", productos);
-const formulario = document.querySelector('#formulario');
-const boton = document.querySelector('#boton');
+// const productos1 = [{
+//     nombre: 'jason vorgees',
+//     valor: 10000
+//   },
+//   {
+//     nombre: 'mark',
+//     valor: 13000
+//   },
+//   {
+//     nombre: 'batman',
+//     valor: 12000
+//   },
+//   {
+//     nombre: 'superman',
+//     valor: 15000
+//   },
+// ]
+const input = document.querySelector('#input')
 
-const filtrar = () => {
-  const texto = formulario.value.toLowerCase();
+const productos = JSON.parse(localStorage.getItem("productoGuardadoLS"));
+//console.log("productos:", productos);
+const formulario = document.querySelector('#formulario');
+//const boton = document.querySelector('#boton');
+formulario.addEventListener('submit', filtrar)
+
+function filtrar(e) {
+    e.preventDefault()
+  const texto = input.value.toLowerCase();
 
   //Vacia el elemento "article" antes de mostrar los resultados.
   document.getElementById("grillaFunko").innerHTML = "";
@@ -57,36 +61,35 @@ const filtrar = () => {
 
 // hice la busqueda de listado de productos y tabla.
 
-const filtrarTablaProducto = () => {
-  const texto = formulario.value.toLowerCase();
+// const filtrarTablaProducto = () => {
+//   const texto = formulario.value.toLowerCase();
 
-  //Vacia el elemento "article" antes de mostrar los resultados.
-  document.getElementById("tablaProducto").innerHTML = "";
+//   //Vacia el elemento "article" antes de mostrar los resultados.
+//   document.getElementById("tablaProducto").innerHTML = "";
 
-  for (let producto of productos) {
-    let nombre = producto.nombre.toLocaleLowerCase();
-    if (nombre.includes(texto)) {
+//   for (let producto of productos) {
+//     let nombre = producto.nombre.toLocaleLowerCase();
+//     if (nombre.includes(texto)) {
+//       //Agrega el producto si hay coincidencias en la busqueda.
+//       crearFila(producto);
+//     }
+//   }
 
-      //Agrega el producto si hay coincidencias en la busqueda.
-      crearFila(producto);
-    }
-  }
-
-  if (document.getElementById("tablaProducto").innerHTML === '') {
-    document.getElementById("tablaProducto").innerHTML += ` 
-    <tr>
-    <th
-      scope="row"
-      class="text-truncate text-center"
-      style="max-width: 150px"
-      colspan="8"
-    >
-      no se encontraron productos
-    </th>
+//   if (document.getElementById("tablaProducto").innerHTML === '') {
+//     document.getElementById("tablaProducto").innerHTML += ` 
+//     <tr>
+//     <th
+//       scope="row"
+//       class="text-truncate text-center"
+//       style="max-width: 150px"
+//       colspan="8"
+//     >
+//       no se encontraron productos
+//     </th>
     
-    </tr>`
-  }
-}
+//     </tr>`
+//   }
+// }
 
 //funcion para buscar local storage.
 function crearFila(productos) {
