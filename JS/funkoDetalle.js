@@ -1,11 +1,14 @@
-console.log(window.location.search)
+console.log(window.location.search);
 const codigo = new URLSearchParams(window.location.search);
-console.log(codigo.get("codigo"))
-let listaProductos = JSON.parse(localStorage.getItem("productoGuardadoLS")) || [];
+console.log(codigo.get("codigo"));
+let listaProductos =
+  JSON.parse(localStorage.getItem("productoGuardadoLS")) || [];
 
-let funkoPop = listaProductos.find((funko) =>{return funko.codigo === codigo.get("codigo")});
+let funkoPop = listaProductos.find((funko) => {
+  return funko.codigo === codigo.get("codigo");
+});
 
-let detalle = document.querySelector("#detalleFunko")
+let detalle = document.querySelector("#detalleFunko");
 detalle.innerHTML = `
 <article class="row my-5 border rounded bg-light">
 <div class="col-12 col-md-8 col-lg-4">
@@ -25,4 +28,4 @@ detalle.innerHTML = `
   <a href="../index.html" class="btn btn-outline-primary my-5"><i class="bi bi-cart2"> Explorar mas</i></a>
 </div>
 </div>
-</article>`
+</article>`;

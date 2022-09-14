@@ -126,9 +126,7 @@ function cargaInicial() {
 }
 
 function crearFila(productos) {
-  console.log(productos);
   let tablaProducto = document.querySelector("#tablaProducto");
-  console.log(tablaProducto);
   tablaProducto.innerHTML += ` <tr>
 <th
   scope="row"
