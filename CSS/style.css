@@ -16,6 +16,9 @@ background-size: cover;
 body{
   font-size: larger;
   font-family: "Teko", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 .colorCard{
   background-color: transparent;
@@ -45,6 +48,10 @@ body{
 
 .noLink:hover{
   color: white;
+}
+
+footer{
+  margin-top: auto;
 }
 
 @media all and (max-width: 767px) {
