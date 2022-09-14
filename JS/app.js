@@ -85,7 +85,7 @@ function generarFunko() {
       imagen.value,
       tipo.value
     );
-    console.log(nuevoProducto);
+
     listaProductos.push(nuevoProducto);
     guardarLS();
     limpiarForm();
@@ -174,7 +174,6 @@ window.borrarProducto = function (codigo) {
     cancelButtonText: "Cancelar",
   }).then((result) => {
     if (result.isConfirmed) {
-      console.log(codigo);
       let copiaListaProductos = listaProductos.filter((producto) => {
         return producto.codigo != codigo;
       });
