@@ -34,34 +34,3 @@ function filtrar(e) {
   }
 }
 
-//funcion para buscar local storage.
-function crearFila(productos) {
-  let tablaProducto = document.querySelector("#tablaProducto");
-  tablaProducto.innerHTML += `<tr>
-<th
-  scope="row"
-  class="text-truncate"
-  style="max-width: 150px"
->
-  ${productos.codigo}
-</th>
-<td>${productos.nombre}</td>
-<td class="text-truncate" style="max-width: 150px">
-${productos.descripcion}
-</td>
-<td class="text-truncate" style="max-width: 150px">
-${productos.precio}
-</td>
-<td>${productos.stock}</td>
-<td>${productos.imagen}</td>
-<td>${productos.tipo}</td>
-<td>
-<button class="btn">
-<i class="bi bi-pencil-square text-warning fs-1" onclick="editarFunko('${productos.codigo}')" ></i>
-</button>
-<button class="btn">
-<i class="bi bi-clipboard-x-fill text-danger fs-1" onclick="borrarProducto('${productos.codigo}')"></i>
-</button>
-</td>
-</tr>`;
-}
