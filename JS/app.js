@@ -143,7 +143,7 @@ ${productos.descripcion}
 ${productos.precio}
 </td>
 <td>${productos.stock}</td>
-<td>${productos.imagen}</td>
+<td class="text-truncate" style="max-width: 150px">${productos.imagen}</td>
 <td>${productos.tipo}</td>
 <td>
 <button class="btn">
