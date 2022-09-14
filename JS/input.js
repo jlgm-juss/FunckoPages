@@ -1,31 +1,10 @@
-//parametro de busqueda segun find
-// const productos1 = [{
-//     nombre: 'jason vorgees',
-//     valor: 10000
-//   },
-//   {
-//     nombre: 'mark',
-//     valor: 13000
-//   },
-//   {
-//     nombre: 'batman',
-//     valor: 12000
-//   },
-//   {
-//     nombre: 'superman',
-//     valor: 15000
-//   },
-// ]
-const input = document.querySelector('#input')
-
+const input = document.querySelector("#input");
 const productos = JSON.parse(localStorage.getItem("productoGuardadoLS"));
-//console.log("productos:", productos);
-const formulario = document.querySelector('#formulario');
-//const boton = document.querySelector('#boton');
-formulario.addEventListener('submit', filtrar)
+const formulario = document.querySelector("#formulario");
+formulario.addEventListener("submit", filtrar);
 
 function filtrar(e) {
-    e.preventDefault()
+  e.preventDefault();
   const texto = input.value.toLowerCase();
 
   //Vacia el elemento "article" antes de mostrar los resultados.
@@ -34,7 +13,6 @@ function filtrar(e) {
   for (let producto of productos) {
     let nombre = producto.nombre.toLocaleLowerCase();
     if (nombre.includes(texto)) {
-
       //Agrega el producto si hay coincidencias en la busqueda.
       document.getElementById("grillaFunko").innerHTML += `
         <div class="card col-12 col-md-5 col-lg-2 cardSize">
@@ -50,52 +28,15 @@ function filtrar(e) {
     }
   }
 
-  if (document.getElementById("grillaFunko").innerHTML === '') {
+  if (document.getElementById("grillaFunko").innerHTML === "") {
     document.getElementById("grillaFunko").innerHTML += ` 
-      <p> No se encontraron productos...</p>`
+      <p> No se encontraron productos...</p>`;
   }
 }
-// boton.addEventListener('click', filtrar);
-// boton.addEventListener('keyup', filtrar);
-// filtrar();
-
-// hice la busqueda de listado de productos y tabla.
-
-// const filtrarTablaProducto = () => {
-//   const texto = formulario.value.toLowerCase();
-
-//   //Vacia el elemento "article" antes de mostrar los resultados.
-//   document.getElementById("tablaProducto").innerHTML = "";
-
-//   for (let producto of productos) {
-//     let nombre = producto.nombre.toLocaleLowerCase();
-//     if (nombre.includes(texto)) {
-//       //Agrega el producto si hay coincidencias en la busqueda.
-//       crearFila(producto);
-//     }
-//   }
-
-//   if (document.getElementById("tablaProducto").innerHTML === '') {
-//     document.getElementById("tablaProducto").innerHTML += ` 
-//     <tr>
-//     <th
-//       scope="row"
-//       class="text-truncate text-center"
-//       style="max-width: 150px"
-//       colspan="8"
-//     >
-//       no se encontraron productos
-//     </th>
-    
-//     </tr>`
-//   }
-// }
 
 //funcion para buscar local storage.
 function crearFila(productos) {
-  console.log(productos);
   let tablaProducto = document.querySelector("#tablaProducto");
-  console.log(tablaProducto);
   tablaProducto.innerHTML += `<tr>
 <th
   scope="row"
@@ -123,4 +64,4 @@ ${productos.precio}
 </button>
 </td>
 </tr>`;
-};
+}

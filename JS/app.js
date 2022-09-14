@@ -1,5 +1,12 @@
 import Producto from "./classProducto.js";
-import { validarDescripcion, validarGenero, validarImagen, validarNombre, validarPrecio, validarStock } from "./helpers.js";
+import {
+  validarDescripcion,
+  validarGenero,
+  validarImagen,
+  validarNombre,
+  validarPrecio,
+  validarStock,
+} from "./helpers.js";
 
 // Inicializacion de variables
 let listaProductos =
@@ -23,12 +30,24 @@ btnAgregarProducto.addEventListener("click", () => {
   mostrarForm(codigo);
 });
 formProducto.addEventListener("submit", crearProducto);
-nombre.addEventListener('blur', ()=>{validarNombre(nombre)});
-descripcion.addEventListener('blur', ()=>{validarDescripcion(descripcion)});
-imagen.addEventListener('blur', ()=>{validarImagen(imagen)});
-tipo.addEventListener('blur', ()=>{validarGenero(tipo)});
-precio.addEventListener('blur',()=>{validarPrecio(precio)});
-stock.addEventListener('blur', ()=>{validarStock(stock)});
+nombre.addEventListener("blur", () => {
+  validarNombre(nombre);
+});
+descripcion.addEventListener("blur", () => {
+  validarDescripcion(descripcion);
+});
+imagen.addEventListener("blur", () => {
+  validarImagen(imagen);
+});
+tipo.addEventListener("blur", () => {
+  validarGenero(tipo);
+});
+precio.addEventListener("blur", () => {
+  validarPrecio(precio);
+});
+stock.addEventListener("blur", () => {
+  validarStock(stock);
+});
 
 // Funciones
 
@@ -39,46 +58,48 @@ function mostrarForm() {
   codigo.value = uuidv4();
 }
 
-function crearProducto(e){
+function crearProducto(e) {
   e.preventDefault();
-  if(funkoNuevo == true){
+  if (funkoNuevo == true) {
     generarFunko();
-  }else{
+  } else {
     actuzalizarFunko();
   }
 }
 
 function generarFunko() {
-  console.log("vamo a crea un producto");
-  if(
-    validarNombre(nombre) && validarDescripcion(descripcion) && validarImagen(imagen) && validarGenero(tipo) && validarPrecio(precio) && validarStock(stock)
-  ){
+  if (
+    validarNombre(nombre) &&
+    validarDescripcion(descripcion) &&
+    validarImagen(imagen) &&
+    validarGenero(tipo) &&
+    validarPrecio(precio) &&
+    validarStock(stock)
+  ) {
+    const nuevoProducto = new Producto(
+      codigo.value,
+      nombre.value,
+      descripcion.value,
+      precio.value,
+      stock.value,
+      imagen.value,
+      tipo.value
+    );
 
-  const nuevoProducto = new Producto(
-    codigo.value,
-    nombre.value,
-    descripcion.value,
-    precio.value,
-    stock.value,
-    imagen.value,
-    tipo.value
-  );
-  console.log(nuevoProducto);
-  listaProductos.push(nuevoProducto);
-  guardarLS();
-  limpiarForm();
-  crearFila(nuevoProducto);
-  console.log(listaProductos);
-  Swal.fire(
-    "Producto Agregado",
-    "El producto se agrego correctamente",
-    "success"
-  );
-  actualizarTabla();
-  modalFormProductos.hide();
-}else{
-  Swal.fire('Ocurrio un error')
-}
+    listaProductos.push(nuevoProducto);
+    guardarLS();
+    limpiarForm();
+    crearFila(nuevoProducto);
+    Swal.fire(
+      "Producto Agregado",
+      "El producto se agrego correctamente",
+      "success"
+    );
+    actualizarTabla();
+    modalFormProductos.hide();
+  } else {
+    Swal.fire("Ocurrio un error");
+  }
 }
 
 function limpiarForm() {
@@ -105,9 +126,7 @@ function cargaInicial() {
 }
 
 function crearFila(productos) {
-  console.log(productos);
   let tablaProducto = document.querySelector("#tablaProducto");
-  console.log(tablaProducto);
   tablaProducto.innerHTML += ` <tr>
 <th
   scope="row"
@@ -124,7 +143,7 @@ ${productos.descripcion}
 ${productos.precio}
 </td>
 <td>${productos.stock}</td>
-<td>${productos.imagen}</td>
+<td class="text-truncate" style="max-width: 150px">${productos.imagen}</td>
 <td>${productos.tipo}</td>
 <td>
 <button class="btn">
@@ -155,11 +174,9 @@ window.borrarProducto = function (codigo) {
     cancelButtonText: "Cancelar",
   }).then((result) => {
     if (result.isConfirmed) {
-      console.log(codigo);
       let copiaListaProductos = listaProductos.filter((producto) => {
         return producto.codigo != codigo;
       });
-      console.log(copiaListaProductos);
       listaProductos = copiaListaProductos;
       guardarLS();
       actualizarTabla();
@@ -177,7 +194,9 @@ window.editarFunko = function (producto) {
 
   modalFormProductos.show();
 
-  let funkoSeleccionado = listaProductos.find((funko) => funko.codigo === producto);
+  let funkoSeleccionado = listaProductos.find(
+    (funko) => funko.codigo === producto
+  );
 
   codigo.value = funkoSeleccionado.codigo;
   nombre.value = funkoSeleccionado.nombre;
@@ -186,10 +205,12 @@ window.editarFunko = function (producto) {
   tipo.value = funkoSeleccionado.tipo;
   precio.value = funkoSeleccionado.precio;
   stock.value = funkoSeleccionado.stock;
-}
+};
 
-function actuzalizarFunko(){
-  let posicionFunko = listaProductos.findIndex((posicion) => posicion.codigo == codigo.value);
+function actuzalizarFunko() {
+  let posicionFunko = listaProductos.findIndex(
+    (posicion) => posicion.codigo == codigo.value
+  );
 
   listaProductos[posicionFunko].nombre = nombre.value;
   listaProductos[posicionFunko].descripcion = descripcion.value;
