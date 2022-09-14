@@ -1,7 +1,7 @@
 # E-commerce Funko Productos
 
 Este proyecto es una práctica de un crud realizado con localstorage, aplicación de funcionalidades con JS, utilización de usuario administrador mediante botón de login.
-También se aplicaron las prácticas aprendidas con HTML, CSS y un toolkit como Bootstrap.
+También se aplicaron las prácticas aprendidas con HTML, CSS.
 Por último el proyecto se fue construyendo mediante trabajo colobarativo con Git y Github (haciendo uso de los pull request).
 
 ### Accede a la demo del proyecto en el siguiente link:
