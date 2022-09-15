@@ -30,7 +30,7 @@ function filtrar(e) {
 
   if (document.getElementById("grillaFunko").innerHTML === "") {
     document.getElementById("grillaFunko").innerHTML += ` 
-      <p> No se encontraron productos...</p>`;
+      <p class='display-3 text-warning text-center mt-3 letraTitulo'>No se encontro el producto</p>`;
   }
 }
 

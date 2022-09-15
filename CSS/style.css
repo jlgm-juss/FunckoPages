@@ -54,9 +54,6 @@ footer{
   margin-top: auto;
 }
 
-.fondoError{
-  background-color: blueviolet;
-}
 
 @media all and (max-width: 767px) {
   .footerCenter {

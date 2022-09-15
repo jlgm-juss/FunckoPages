@@ -20,6 +20,8 @@ Por último el proyecto se fue construyendo mediante trabajo colobarativo con Gi
 
 [Google Fonts](https://fonts.google.com/specimen/Teko?preview.size=64&preview.layout=row)
 
+[https://funaticostore.com/](https://funaticostore.com/)
+
 ### Autores
 
 - Agostina Loza 
