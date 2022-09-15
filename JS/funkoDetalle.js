@@ -1,6 +1,5 @@
-console.log(window.location.search);
+
 const codigo = new URLSearchParams(window.location.search);
-console.log(codigo.get("codigo"));
 let listaProductos =
   JSON.parse(localStorage.getItem("productoGuardadoLS")) || [];
 
