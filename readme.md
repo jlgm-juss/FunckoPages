@@ -6,7 +6,7 @@ Por último el proyecto se fue construyendo mediante trabajo colobarativo con Gi
 
 ### Accede a la demo del proyecto en el siguiente link:
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/10782ccd-5a19-4eb6-91d7-a7e1e47cc762/deploy-status)](https://app.netlify.com/sites/funko-rolling/deploys)
+https://funko-rolling.netlify.app
 
 ### Librerias utilizadas
 
