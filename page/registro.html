@@ -21,21 +21,21 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
     />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap"
       rel="stylesheet"
     />
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../CSS/style.css" />
     <title>Funko Productos</title>
   </head>
-  <body class="body">
-    <header class="fondoNav">
-      <nav class="navbar navbar-expand-lg container">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html"
+  <body>
+    <header class="d-flex justify-content-start fondoNav">
+      <nav class="">
+        <div class="container-fluid mt-3 d-flex justify-content-start">
+          <a class="navbar-brand" href="../index.html"
             ><img
-              src="img/logos/logo2.png"
+              src="../img/logos/logo2.png"
               class="logoNavbar"
               alt="Logo de Empresa"
           /></a>
@@ -50,49 +50,36 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html"
-                  >Inicio</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./page/administrador.html" hidden
-                  >Administrador</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./page/acercadeNosotros.html"
-                  >Acerca de nosotros</a
-                >
-              </li>
-            </ul>
-            <form class="d-flex" id="formulario">
-              <button class="btn btn-outline-primary me-2" type="submit">
-                <a class="noLink" href="./page/registro.html">Login</a>
-              </button>
-              <input
-                class="form-control me-2"
-                placeholder="Search"
-                aria-label="Search"
-                id="input"
-              />
-              <button class="btn btn-outline-primary" type="submit">
-                Buscar
-              </button>
-            </form>
-          </div>
         </div>
       </nav>
     </header>
-    <main class="container">
-      <h1 class="text-center text-light letraTitulo">Funko-Pop Rolling</h1>
-      <section class="container">
-        <article
-          class="row d-flex justify-content-center"
-          id="grillaFunko"
-        ></article>
+    <main>
+      <section class="container mt-4">
+        <form id="formLog">
+          <div class="mb-3">
+            <label for="usuario" class="form-label">Usuario</label>
+            <input
+              type="text"
+              class="form-control"
+              id="usuario"
+              minlength="10"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="pass" class="form-label">Contraseña</label>
+            <input
+              type="password"
+              class="form-control"
+              id="pass"
+              maxlength="16"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary mb-3">
+            Iniciar Sesión
+          </button>
+        </form>
       </section>
     </main>
     <footer>
@@ -101,22 +88,22 @@
           <article class="row d-flex justify-content-around">
             <div class="col-12 col-md-3 col-lg-3">
               <h5>Funko-Pop Rolling</h5>
-              <a href="page/error404.html" class="textoFooter"
+              <a href="error404.html" class="textoFooter"
                 ><i class="bi bi-instagram mx-lg-2 mt-1 fs-4"></i
               ></a>
-              <a href="page/error404.html" class="textoFooter"
+              <a href="error404.html" class="textoFooter"
                 ><i class="bi bi-whatsapp mx-lg-2 mt-1 fs-4"></i
               ></a>
-              <a href="page/error404.html" class="textoFooter"
+              <a href="error404.html" class="textoFooter"
                 ><i class="bi bi-facebook mx-lg-2 mt-1 fs-4"></i
               ></a>
-              <a href="page/error404.html" class="textoFooter"
+              <a href="error404.html" class="textoFooter"
                 ><i class="bi bi-envelope mx-lg-2 mt-1 fs-4"></i
               ></a>
             </div>
             <div class="col-12 col-md-3 col-lg-3">
               <h5>Información</h5>
-              <a href="page/error404.html" class="textoFooter"
+              <a href="error404.html" class="textoFooter"
                 >Nuestra empresa<i
                   class="bi bi-file-person mx-lg-2 mt-1 fs-4"
                 ></i
@@ -141,7 +128,6 @@
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"
     ></script>
-    <script src="JS/input.js"></script>
-    <script src="JS/funkoIndex.js"></script>
+    <script src="../JS/login.js" type="module"></script>
   </body>
 </html>
